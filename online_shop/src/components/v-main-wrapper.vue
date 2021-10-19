@@ -1,7 +1,6 @@
 <template>
     <div class="v-main-wrapper">
-        <p>{{title}}</p>
-        <v-catalog/>
+                <v-catalog/>
         <v-cart/>
     </div>
 </template>
