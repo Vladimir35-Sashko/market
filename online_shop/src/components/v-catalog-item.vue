@@ -1,10 +1,10 @@
 <template>
     <div class="v-catalog-item">
-        <img src="" alt="img">
+        <img src="'../assets/images' + product_data.image" alt="img">
         <p class="v-catalog-item_name">{{product_data.name}}</p>
         <p class="v-catalog-item_price">Price:{{product_data.price}}</p>
         <button class="v-catalog-item_add_to_cart_btn" 
-        @click="sendDataToParent"
+        @click="addToCart"
         >Add to cart</button>
     </div>
 </template>
@@ -25,12 +25,14 @@ export default {
     },
     computed: {},
     methods: {
-        sendDataToParent () {
-            this.$emit('sendArticle', this.product_data.article)
+        addToCart() {
+            this.$emit('addToCart',this.product_data)
         }
-    },
+    }
 }
 </script>
+
+
 <style>
 .v-catalog-item {
     flex-basis: 25%;
